@@ -1,0 +1,25 @@
+<%- include('../partials/header', { title: 'Manage Users' }) %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+  <h2>Users</h2>
+  <table style="width:100%; border-collapse: collapse;">
+    <tr><th>Name</th><th>Email</th><th>Status</th><th>Action</th></tr>
+    <% users.forEach(u => { %>
+      <tr>
+        <td><%= u.name %></td>
+        <td><%= u.email %></td>
+        <td><%= u.isBanned ? 'Banned' : 'Active' %></td>
+        <td>
+          <% if (u.isBanned) { %>
+            <a href="/admin/users/unban/<%= u._id %>">Unban</a>
+          <% } else { %>
+            <a href="/admin/users/ban/<%= u._id %>">Ban</a>
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

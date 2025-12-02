@@ -1,0 +1,28 @@
+<%- include('../partials/header', { title: user.name + ' - Profile' }) %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+  <div class="profile-header">
+    <img src="<%= user.avatarUrl || 'https://via.placeholder.com/110' %>" alt="avatar" />
+    <h2><%= user.name %></h2>
+    <p><%= user.bio %></p>
+  </div>
+
+  <h3 style="margin-top:20px">Posts</h3>
+  <% if (posts && posts.length) { %>
+    <% posts.forEach(post => { %>
+      <div class="post-card">
+        <div><%= post.text %></div>
+        <% if (post.mediaUrls && post.mediaUrls.length) { %>
+          <% post.mediaUrls.forEach(m => { %>
+            <img src="<%= m %>" style="width:100%; margin-top:10px" />
+          <% }) %>
+        <% } %>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>No posts</p>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>

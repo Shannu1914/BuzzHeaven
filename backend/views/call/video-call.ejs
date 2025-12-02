@@ -1,0 +1,23 @@
+<%- include('../partials/header', { title: 'Call' }) %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+  <h2>Video Call Room</h2>
+  <p>Room ID: <%= roomId %></p>
+
+  <div class="video-container">
+    <video id="localVideo" autoplay playsinline muted></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+  </div>
+
+  <div class="call-controls">
+    <button id="startBtn">Start</button>
+    <button id="callBtn">Call</button>
+    <button id="endBtn">End</button>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/webrtc.js"></script>
+
+<%- include('../partials/footer') %>

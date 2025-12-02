@@ -1,0 +1,15 @@
+<%- include('../partials/header', { title: 'Manage Posts' }) %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+  <h2>Posts</h2>
+  <% posts.forEach(p => { %>
+    <div class="post-card">
+      <strong><%= p.author.name %></strong>
+      <p><%= p.text %></p>
+      <a href="/admin/posts/delete/<%= p._id %>">Delete</a>
+    </div>
+  <% }) %>
+</div>
+
+<%- include('../partials/footer') %>

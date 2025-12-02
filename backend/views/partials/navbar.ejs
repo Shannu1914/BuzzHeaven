@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="container">
+    <a href="/">BuzzHeaven</a>
+    <div style="margin-left:auto;">
+      <% if (locals.currentUser) { %>
+        <a href="/feed">Feed</a>
+        <a href="/profile/<%= currentUser._id %>">Profile</a>
+        <a href="/posts/create">Create</a>
+        <a href="/messages">Messages</a>
+        <a href="/logout">Logout</a>
+        <% if(currentUser.role === 'admin'){ %>
+          <a href="/admin/calls">Calls</a>
+          <a href="/admin/reports">Reports</a>
+        <% } %>
+      <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

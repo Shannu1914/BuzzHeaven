@@ -1,0 +1,120 @@
+social-media-project/
+│
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   ├── .env  (ignored in git)
+│   ├── README.md
+│   │
+│   ├── config/
+│   │   ├── db.js
+│   │   └── aws.js
+│   │
+│   ├── middleware/
+│   │   └── auth.js
+│   │
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Post.js
+│   │   ├── CallLog.js
+│   │   └── Message.js           (optional for chat)
+│   │
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── posts.js
+│   │   ├── users.js
+│   │   ├── media.js
+│   │   └── messages.js          (optional for chat)
+│   │
+│   ├── socket/
+│   │   ├── index.js             (socket events & WebRTC signalling)
+│   │   └── chat.js              (optional)
+│   │
+│   ├── uploads/ (if you store locally instead of S3)
+│   └── logs/
+│
+│
+├── frontend-web/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── api.js           (API & auth fetch helper)
+│   │   │   └── socket.js        (socket.io connection)
+│   │   ├── components/
+│   │   │   ├── Navbar.js
+│   │   │   ├── PostCard.js
+│   │   │   ├── AudioPlayer.js
+│   │   │   └── VideoCall.js
+│   │   ├── pages/
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   ├── Feed.js
+│   │   │   ├── Profile.js
+│   │   │   └── Messages.js
+│   │   ├── hooks/
+│   │   │   └── useAuth.js
+│   │   ├── styles/
+│   │   │   ├── global.css
+│   │   │   └── components.css
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── config.js
+│   ├── package.json
+│   ├── .env
+│   └── README.md
+│
+│
+├── mobile/
+│   ├── android/
+│   ├── ios/
+│   ├── app.json
+│   ├── package.json
+│   ├── index.js
+│   ├── .env
+│   │
+│   ├── src/
+│   │   ├── api/
+│   │   │   └── api.js
+│   │   ├── socket/
+│   │   │   └── socket.js
+│   │   ├── screens/
+│   │   │   ├── LoginScreen.js
+│   │   │   ├── RegisterScreen.js
+│   │   │   ├── HomeFeedScreen.js
+│   │   │   ├── ProfileScreen.js
+│   │   │   ├── ChatScreen.js
+│   │   │   └── CallScreen.js     (WebRTC video/audio)
+│   │   ├── components/
+│   │   │   ├── PostCard.js
+│   │   │   └── CallButton.js
+│   │   └── config.js
+│
+│
+├── docs/
+│   ├── API.md
+│   ├── DB.md
+│   ├── MEDIA.md
+│   ├── SOCKET.md
+│   └── WEBRTC.md
+│
+├── docker/
+│   ├── backend.Dockerfile
+│   ├── frontend.Dockerfile
+│   └── mongo-init.js
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md  (root documentation)
+
+
+
+
+
+
+
+
+
+
+BuzzHeaven
+Vibeify

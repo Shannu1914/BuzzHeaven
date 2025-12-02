@@ -1,0 +1,18 @@
+<%- include('../partials/header', { title: 'Messages' }) %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+  <h2>Messages</h2>
+  <div class="chat-box" id="chatBox"></div>
+
+  <div style="display:flex; gap:8px; margin-top:8px;">
+    <input id="peerId" placeholder="Peer user id" style="flex:0 0 250px" />
+    <input id="msgInput" placeholder="Type a message..." style="flex:1" />
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+
+<%- include('../partials/footer') %>

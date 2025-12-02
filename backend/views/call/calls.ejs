@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+  <h2>Active Calls</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Call ID</th>
+        <th>Caller</th>
+        <th>Receiver</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% calls.forEach(call => { %>
+        <tr>
+          <td><%= call._id %></td>
+          <td><%= call.caller.name %></td>
+          <td><%= call.receiver.name %></td>
+          <td><%= call.status %></td>
+          <td>
+            <a href="/admin/calls/<%= call._id %>/end" class="btn btn-danger">End Call</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

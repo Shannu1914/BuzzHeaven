@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("partials/header") %>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <%- include("partials/navbar") %>
+
+  <section class="hero">
+    <img src="/images/home-bg.jpg" alt="">
+    <div class="overlay">
+      <% if (currentUser) { %>
+        <h1>Welcome back, <%= currentUser.username %> 👋</h1>
+        <p>Connect with your world — posts, reels, music, chats & video calls.</p>
+        <a href="/feed" class="btn-primary">Start Exploring</a>
+      <% } else { %>
+        <h1>Welcome to BuzzHeaven ✨</h1>
+        <p>Join the community — create, share & interact with friends.</p>
+        <a href="/register" class="btn-primary">Get Started</a>
+      <% } %>
+    </div>
+  </section>
+
+  <section class="quick-actions">
+    <div class="card" onclick="location.href='/feed'">
+      <img src="/images/cards/posts.jpg">
+      <h3>Create & View Posts</h3>
+    </div>
+
+    <div class="card" onclick="location.href='/reels'">
+      <img src="/images/cards/reels.jpg">
+      <h3>Watch Reels</h3>
+    </div>
+
+    <div class="card" onclick="location.href='/music'">
+      <img src="/images/cards/music.jpg">
+      <h3>Music Player</h3>
+    </div>
+
+    <div class="card" onclick="location.href='/messages'">
+      <img src="/images/cards/chat.jpg">
+      <h3>Chat & Voice Notes</h3>
+    </div>
+
+    <div class="card" onclick="location.href='/calls'">
+      <img src="/images/cards/call.jpg">
+      <h3>Audio & Video Calls</h3>
+    </div>
+
+    <% if (currentUser) { %>
+      <div class="card" onclick="location.href='/profile/<%= currentUser._id %>'">
+        <img src="/images/cards/profile.jpg">
+        <h3>Your Profile</h3>
+      </div>
+    <% } else { %>
+      <div class="card" onclick="location.href='/login'">
+        <img src="/images/cards/profile.jpg">
+        <h3>Login to View Profile</h3>
+      </div>
+    <% } %>
+  </section>
+
+  <%- include("partials/footer") %>
+</body>
+</html>
